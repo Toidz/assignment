@@ -1,0 +1,14 @@
+extends ../layout/default.pug
+block main
+    h2 Quản lý bài học
+    .section-1 
+        a(href="/admin/lesson/create") + Tạo bài học
+    h3(style="margin-top:30px") Danh sách bài học
+    .section-2 
+        each item in listLesson
+            .inner-item 
+                a(href=`/admin/lesson/edit/${item.id}`)
+                    img(src=item.image, alt="avatar")
+                .inner-title #{item.title}
+                .inner-delete-lesson(id-delete=item.id) x
+        

@@ -1,0 +1,10 @@
+const router = require("express").Router()
+const dashboardRouter = require("./dashboard.route")
+const lessonRouter = require("./lesson.route")
+const homeRouter = require("./home.route")
+const studyRouter = require("./study.route")
+router.use("/dashboard",dashboardRouter)
+router.use("/lesson",lessonRouter)
+router.use("/home",homeRouter)
+router.use("/study",studyRouter)
+module.exports = router

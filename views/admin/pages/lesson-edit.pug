@@ -1,0 +1,23 @@
+extends ../layout/default.pug
+block main
+    h2(id_less=lessonCurrent._id) #{lessonCurrent.title}
+    button(class="addWordBtn" id="addWordBtn") + Thêm từ mới
+    h3 Danh sách từ
+    .section-4  
+        each item in existWord
+            .word
+                .inner-item
+                    .number Từ thứ #{item.index}
+                .item
+                    label(class="inner-label" for=item.id) Ảnh
+                    div(class="inner-upload-image" image-default=item.avatar?item.avatar:"")
+                        input.filepond-image(class="image-up" type="file" filepond-image id=item.id name=item.id)
+                .inner-item
+                    label(for=`name-${item.id}`) Từ
+                    input(type="text" id=`name-${item.id}` class="input-name" value=item.word)
+                .inner-delete-vocab(id-delete=item.id) Xóa
+
+    .class-button
+        button(class="button-edit-lesson") Cập nhật
+
+    

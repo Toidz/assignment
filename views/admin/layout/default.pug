@@ -1,0 +1,50 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    title #{pageTitle}
+    //- link(rel="icon" href=websiteInfo.favicon type="image/x-icon")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="/admin/assets/css/style.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css")
+    link(rel="stylesheet", href="https://unpkg.com/filepond@^4/dist/filepond.css")
+    link(rel="stylesheet", href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css")
+    link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css")
+  body
+    header.header
+        .inner-logo
+            a(href=`/admin/dashboard`)
+                span
+                    img(src="", alt="", style="width:90px")
+        .inner-wrap
+            .inner-account
+                .inner-avatar
+                    img(src="/admin/assets/image/demo.jpg", alt="")
+                .inner-text
+                    .inner-name admin
+                    .inner-role Admin
+            button.inner-button-menu
+                <i class="fa-solid fa-bars"></i>
+
+    nav.sider
+        ul.inner-menu
+            li
+                a(href=`/admin/dashboard`) <i class="fa-solid fa-gauge-high"></i> Tổng quan
+            li
+                a(href=`/admin/lesson`) <i class="fa-solid fa-table-cells-large"></i> Quản lý bài học
+            li
+                a(href=`/admin/home`) <i class="fa-solid fa-table-cells-large"></i> Lớp học của tôi
+            //- li
+            //-     a(href=`/admin/account/logout` class="inner-logout") <i class="fa-solid fa-power-off"></i> Đăng xuất
+    .sider-overlay
+
+    main.main
+      block main
+      
+    script(src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js")
+    script(src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js") 
+    script(src="https://unpkg.com/filepond-plugin-file-validate-type/dist/filepond-plugin-file-validate-type.js") 
+    script(src="https://unpkg.com/filepond@^4/dist/filepond.js")
+    script(src="https://cdn.jsdelivr.net/npm/sweetalert2@11")
+    script(src="/admin/assets/js/script.js")
+    

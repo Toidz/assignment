@@ -1,0 +1,14 @@
+extends ../layout/default.pug
+block main
+    h2 Tạo buổi học
+    .section-3
+        .inner-item 
+            label(for="title") Tên buổi học
+            input(type="text" id="title") 
+        .item
+            label(class="inner-label" for="avatar") Ảnh đại diện
+            div(class="inner-upload-image")
+                input(type="file" id="avatar" filepond-image name="avatar")
+    button(class="button-lesson") Tạo buổi học
+
+    

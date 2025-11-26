@@ -1,0 +1,12 @@
+extends ../layout/default.pug
+block main
+    .section-1 
+        h2 Chào mừng bạn!
+    h3(style="margin-top:30px") Danh sách bài học
+    .section-2 
+        each item in listLesson
+            .inner-item 
+                a(href=`/admin/study?id=${item.id}`)
+                    img(src=item.image, alt="avatar")
+                .inner-title #{item.title}
+                
