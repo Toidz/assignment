@@ -2,7 +2,7 @@ const express = require("express");
 require('dotenv').config()
 
 const app = express();
-const port = 3989;
+const port = 3764;
 
 const path = require("path");
 app.set("views",path.join(__dirname,"views"));
@@ -17,7 +17,7 @@ database.connect();
 
 app.use(express.json());
 const adminRouter= require("./router/admin/index.route")
-app.use(`/admin`,adminRouter);
+app.use(`/`,adminRouter);
 
 app.listen(port, () => {
   console.log(`Server chạy tại http://localhost:${port}`);

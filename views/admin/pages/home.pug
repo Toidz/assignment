@@ -6,7 +6,7 @@ block main
     .section-2 
         each item in listLesson
             .inner-item 
-                a(href=`/admin/study?id=${item.id}`)
+                a(href=`/study?id=${item.id}`)
                     img(src=item.image, alt="avatar")
                 .inner-title #{item.title}
                 

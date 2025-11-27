@@ -6,8 +6,12 @@ if (sider) {
   items.forEach(a => {
     a.classList.remove("active"); 
     const hrefName = a.getAttribute("href").split("/").pop(); 
-    if (path.includes(hrefName)) {
+
+    if (path.includes(hrefName)&&hrefName!='') {
       a.classList.add("active");   
+    }
+    if(path=='/' && hrefName==''){
+      a.classList.add("active"); 
     }
   });
 }
@@ -75,7 +79,7 @@ if(btn){
     formData.append("title", title);
     formData.append("avatar",avatar);
 
-    fetch("/admin/lesson/create", {
+    fetch("/lesson/create", {
         method: "POST",
         body: formData
     }).then(res=>res.json())
@@ -247,7 +251,7 @@ if (btnSubmit) {
         if (!isValid) return; 
         formData.append("words", JSON.stringify(wordsData));
 
-        fetch(`/admin/lesson/edit/${valueId}`, {
+        fetch(`/lesson/edit/${valueId}`, {
             method: "POST",
             body: formData
         })
@@ -269,7 +273,7 @@ if(innerDeleteVocabs){
     innerDeleteVocabs.forEach(innerDeleteVocab => {
         innerDeleteVocab.addEventListener("click",()=>{
             const id_delete = innerDeleteVocab.getAttribute("id-delete")
-            fetch(`/admin/lesson/delete/${id_delete}`,{
+            fetch(`/lesson/delete/${id_delete}`,{
                 method:"PATCH"
             })
             .then(res => res.json())
@@ -296,7 +300,7 @@ if(innerDeleteLessons){
     innerDeleteLessons.forEach(innerDeleteLesson => {
         innerDeleteLesson.addEventListener("click",()=>{
             const id_delete = innerDeleteLesson.getAttribute("id-delete")
-            fetch(`/admin/lesson/delete-lesson/${id_delete}`,{
+            fetch(`/lesson/delete-lesson/${id_delete}`,{
                 method:"PATCH"
             })
             .then(res => res.json())
